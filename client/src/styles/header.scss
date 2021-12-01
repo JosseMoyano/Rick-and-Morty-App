@@ -1,0 +1,54 @@
+.container_header{
+    display: flex;
+    width: 100%;
+    img{
+        width: 200px;
+    }
+    .navegacion {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: violet;
+        .botones{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            border-bottom: 1px solid black;
+            button {
+                border: none;
+                background-color: #7da4be9e;
+                cursor: pointer;
+                padding: 4.8px;
+                color: white;
+                &:hover{
+                    background-color: violet;
+                }
+            }
+        }
+        .busqueda{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .inputSearch{
+                width: 82%;
+                height: 50px;
+                margin-left: 45px;
+                margin-right: 45px;
+                margin-top: 20px;
+                border: none;
+                border-radius: 5px;
+                padding: 15px;
+            }
+            .texto{
+                width: 22%;
+                height: 92px;
+                background-color: black;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                // padding: 5px;
+            }
+        }
+    }
+}

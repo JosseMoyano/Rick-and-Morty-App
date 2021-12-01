@@ -1,0 +1,78 @@
+.container_sidebar{
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    padding-top: -30px;
+    align-items: flex-start;
+    .container_title{
+        padding-bottom: 20px;
+        padding-Top: 15px;
+        .title{
+            padding-bottom: 7px;
+            color: #1E1E1E;
+            font-family: "Open Sans";
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 0;
+            line-height: 24px;
+        }
+        .hr{
+            box-sizing: border-box;
+            height: 2px;
+            width: 210px;
+            border: 2px solid #F5F5F5;
+            margin-bottom: 15px;
+        }
+        .container_input{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            .input{ 
+                appearance: none;
+                -webkit-appearance: none;
+                height: 15px;
+                width: 15px;
+                background-color: white;
+                border: 1px solid black;
+                cursor: pointer;
+                margin-bottom: 15px;
+                margin-right: 7px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &::after{
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+                    content: "\f00c";
+                    font-size: 10px;
+                    color: white;
+                }
+                &:hover{
+                    background-color: #1DB779 ;
+                }
+                &:checked{
+                    background-color: #1DB779;
+                    border: none;
+                }
+            }
+            .label{
+                cursor: pointer;
+                color: #1E1E1E;
+                font-family: "Open Sans";
+                font-size: 15px;
+                font-weight: 300;
+                letter-spacing: 0;
+                line-height: 20px;
+                margin-bottom: 15px; 
+                &:hover{
+                    color: #1DB779;
+                    font-family: "Open Sans";
+                    font-size: 15px;
+                    font-weight: 300;
+                    letter-spacing: 0;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}

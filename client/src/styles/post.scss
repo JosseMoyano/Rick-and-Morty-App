@@ -1,0 +1,29 @@
+.container_post{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin: 30px;
+    margin-top: 0px;
+    cursor: pointer;
+    .a{
+        text-decoration: none;
+        .container{
+            margin-bottom: 30px ;
+            .img{
+                width: 100%;
+                &:hover{
+                    opacity: 0.5;
+                }
+            }
+            .title{
+                color: #1E1E1E;
+                font-family: "Open Sans";
+                font-size: 15px;
+                letter-spacing: 0;
+                line-height: 22px;
+                text-align: center;
+                padding-bottom: 15px;
+            }
+        }
+    }
+}

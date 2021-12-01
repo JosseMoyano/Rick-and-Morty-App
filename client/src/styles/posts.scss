@@ -1,0 +1,9 @@
+.container_posts{
+    display: flex;
+    flex: 9;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    margin: 20px;
+    padding-bottom: 30px;
+}
