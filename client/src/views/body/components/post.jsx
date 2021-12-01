@@ -3,12 +3,14 @@ import '../../../styles/post.scss'
 
 export default function Post (props) {
 
+    const {name, image } = props;
+
     return (
         <div className='container_post'>
             <a href='#' className='a'>
                 <div className='container'>
-                    <img alt='Imagen' className='img' />
-                    <p className='title'>titulo</p>
+                    <img src={image} alt={image} className='img' />
+                    <p className='title'>{name}</p>
                 </div>
             </a>
         </div>

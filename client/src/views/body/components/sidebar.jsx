@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Posts from "./posts";
+import { useDispatch, useSelector } from 'react-redux';
 import '../../../styles/sidebar.scss'
+import { getCharacters } from "../../../redux/actions";
 
 export default function Sidebar () {
+
+    const dispatch = useDispatch()
+    const characters = useSelector(state => state.characters)
+
+    useEffect(() => {
+        dispatch(getCharacters())
+    }, [dispatch])
 
     return (
         <>
@@ -16,7 +25,9 @@ export default function Sidebar () {
                     </div>
                 </div>
         </div>
-        <Posts/>
+        <div className='container_posts'>
+            <Posts characters={characters}/>
+        </div>
         </>
     )
 }
