@@ -7,12 +7,12 @@ export default function Post (props) {
 
     return (
         <div className='container_post'>
-            <a href='#' className='a'>
                 <div className='container'>
+                    <div className='div_image'>
                     <img src={image} alt={image} className='img' />
+                    </div>
                     <p className='title'>{name}</p>
                 </div>
-            </a>
         </div>
     )
-}
+} 

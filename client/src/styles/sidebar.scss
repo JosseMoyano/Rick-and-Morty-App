@@ -7,6 +7,8 @@
     .container_title{
         padding-bottom: 20px;
         padding-Top: 15px;
+        display: flex;
+        flex-direction: column;
         .title{
             padding-bottom: 7px;
             color: #1E1E1E;
@@ -25,8 +27,8 @@
         }
         .container_input{
             display: flex;
-            flex-direction: row;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
             .input{ 
                 appearance: none;
                 -webkit-appearance: none;
@@ -35,7 +37,6 @@
                 background-color: white;
                 border: 1px solid black;
                 cursor: pointer;
-                margin-bottom: 15px;
                 margin-right: 7px;
                 display: flex;
                 justify-content: center;
@@ -63,7 +64,8 @@
                 font-weight: 300;
                 letter-spacing: 0;
                 line-height: 20px;
-                margin-bottom: 15px; 
+                margin-bottom: 15px;
+                display: flex; 
                 &:hover{
                     color: #1DB779;
                     font-family: "Open Sans";
@@ -72,6 +74,11 @@
                     letter-spacing: 0;
                     line-height: 20px;
                 }
+            }
+            .input_search{
+                width: 100%;
+                padding: 5px;
+                outline: none;
             }
         }
     }
