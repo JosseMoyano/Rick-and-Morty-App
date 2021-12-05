@@ -1,8 +1,9 @@
 export const GET_CHARACTERS = 'GET CHARACTERS';
 export const GET_CHARACTER = 'GET CHARACTER';
 export const CLEAN_CHARACTER = 'CLEAN CHARACTER';
-export const GET_LOCATIONS = 'GET LOCATIONS';
 export const SEARCH_CHARACTERS = 'SEARCH CHARACTERS';
+export const GET_LOCATIONS = 'GET LOCATIONS';
+export const GET_EPISODES = 'GET EPISODES';
 
 export const getCharacters = (status, gender, name) => {
         return async dispatch => {
@@ -63,6 +64,21 @@ export const getLocations = (type, name) => {
             const json = await response.json();
             dispatch({
                 type: GET_LOCATIONS,
+                payload: json
+            });            
+        } catch (error) {
+            console.error(error)
+        }
+    }
+}
+
+export const getEpisodes = (name, episode) => {
+    return async dispatch => {
+        try {
+            const response = await fetch(`http://localhost:3001/episode?name=${name}&episode=${episode}`);
+            const json = await response.json();
+            dispatch({
+                type: GET_EPISODES,
                 payload: json
             });            
         } catch (error) {

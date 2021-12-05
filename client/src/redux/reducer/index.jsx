@@ -1,10 +1,11 @@
-import { CLEAN_CHARACTER, GET_CHARACTER, GET_CHARACTERS, GET_LOCATIONS, SEARCH_CHARACTERS } from '../actions';
+import { CLEAN_CHARACTER, GET_CHARACTER, GET_CHARACTERS, GET_EPISODES, GET_LOCATIONS, SEARCH_CHARACTERS } from '../actions';
 
 const initialState = {
    characters : undefined,
    character: [],
    searchedCharacter: undefined,
-   locations: undefined
+   locations: undefined,
+   episodes: undefined
 }
 
 export default function reducer (state = initialState, action){
@@ -33,6 +34,11 @@ export default function reducer (state = initialState, action){
             return {
                 ...state,
                 locations: action.payload
+            }
+        case GET_EPISODES:
+            return {
+                ...state,
+                episodes: action.payload
             }
         default:
             return state;

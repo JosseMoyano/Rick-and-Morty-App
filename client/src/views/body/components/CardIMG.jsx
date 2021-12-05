@@ -4,7 +4,7 @@ import { cleanCharacter, getCharacter } from "../../../redux/actions";
 
 export default function CardIMG (props){
 
-    const {resident} = props
+    const { resident } = props
     const dispatch = useDispatch();
     const character = useSelector(state => state.character)
     
@@ -15,6 +15,11 @@ export default function CardIMG (props){
         }
     }, [dispatch, resident])
 
+    // let hash = {};
+    // character = character.filter(o => hash[o.id] ? false : hash[o.id] = true);
+
+    console.log('character: ', character)
+    
     return (
         <>
         {
@@ -23,7 +28,7 @@ export default function CardIMG (props){
                     <img src={c.image} alt='resident' />
                     <p>{c.name}</p>
                 </div>
-            )):null
+            )):<p>cargando...</p>
         }
         </>
     )
