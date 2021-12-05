@@ -2,7 +2,7 @@ import React from "react";
 import Sidebar from "./components/sidebar";
 import '../../styles/body.scss'
 
-export default function Body () {
+export default function Personajes () {
     
     return (
         <div className='container_body'>

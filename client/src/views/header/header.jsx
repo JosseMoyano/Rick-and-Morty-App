@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from "react-router-dom";
 import img from '../../assets/Rick and Morty.png'
 import { searchCharacter } from '../../redux/actions';
 import '../../styles/header.scss';
@@ -7,6 +8,7 @@ import Post from '../body/components/post';
 
 export default function Header () {
 
+    const history = useHistory()
     const dispatch = useDispatch()
     const [ search, setSearch ] = useState('')
     const searchedCharacter = useSelector(state => state.searchedCharacter)
@@ -23,9 +25,9 @@ export default function Header () {
                 <img src={img} alt='Rick and Morty IMG' />
                 <div className='navegacion'>
                     <div className='botones'>
-                        <button>PERSONAJES</button>
-                        <button>UBICACIONES</button>
-                        <button>EPISODIOS</button>
+                        <button onClick={() => history.push('./')}>PERSONAJES</button>
+                        <button onClick={() => history.push('./ubicaciones')}>UBICACIONES</button>
+                        <button onClick={() => history.push('./episodios')}>EPISODIOS</button>
                     </div>
                     <div className='busqueda'>
                         <input type='search' placeholder='Introduce el nombre del personaje' className='inputSearch' name='buscar' onChange={onChange} value={search} />

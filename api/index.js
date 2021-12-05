@@ -1,7 +1,7 @@
 const server = require('./src/app.js');
 const { conn } = require('./src/db');
 const axios = require('axios');
-const { guardarCharacters } = require('./src/utils');
+const { guardarCharacters, guardarLocations } = require('./src/utils');
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
@@ -10,9 +10,15 @@ conn.sync({ force: true }).then(() => {
     try {
       let i = 1
       while (i < 43) {
-        const respuesta = await axios(`https://rickandmortyapi.com/api/character?page=${i}`)
+        let respuesta = await axios(`https://rickandmortyapi.com/api/character?page=${i}`)
         respuesta.data.results.forEach(c => guardarCharacters(c.id, c.name, c.status, c.gender, c.location.name , c.location.url, c.image, c.url))
         i++
+      }
+      let j = 1
+      while (j < 8 ) {
+        let respuesta = await axios(`https://rickandmortyapi.com/api/location?page=${j}`)
+        respuesta.data.results.forEach(c => guardarLocations(c.id, c.name, c.type, c.dimension, c.residents , c.url))
+        j++
       }
     } catch (error) {
       console.log(error)

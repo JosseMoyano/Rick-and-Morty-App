@@ -1,8 +1,10 @@
-import { GET_CHARACTERS, SEARCH_CHARACTERS } from '../actions';
+import { CLEAN_CHARACTER, GET_CHARACTER, GET_CHARACTERS, GET_LOCATIONS, SEARCH_CHARACTERS } from '../actions';
 
 const initialState = {
    characters : undefined,
-   searchedCharacter: undefined
+   character: [],
+   searchedCharacter: undefined,
+   locations: undefined
 }
 
 export default function reducer (state = initialState, action){
@@ -12,10 +14,25 @@ export default function reducer (state = initialState, action){
                 ...state,
                 characters:action.payload,
             } 
+        case GET_CHARACTER:
+            return {
+                ...state,
+                character: [...state.character, action.payload],
+            } 
+        case CLEAN_CHARACTER:
+            return {
+                ...state,
+                character: [],
+            } 
         case SEARCH_CHARACTERS:
             return {
                 ...state,
                 searchedCharacter: action.payload
+            }
+        case GET_LOCATIONS:
+            return {
+                ...state,
+                locations: action.payload
             }
         default:
             return state;

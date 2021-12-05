@@ -44,7 +44,7 @@ export default function Sidebar () {
                     <hr className='hr'/>
                     <div className='container_input' onChange={ (e) => onChange(e)}>
                         <label className='label' htmlFor='vivo'><input type='radio' className='input' name='estado' value='alive' id='vivo'/>Vivo</label>
-                        <label className='label' htmlFor='muerto'><input type='radio' className='input' name='estado' value='dead' id='muerto' />Muerto</label>                {/* </div> */}
+                        <label className='label' htmlFor='muerto'><input type='radio' className='input' name='estado' value='dead' id='muerto' />Muerto</label>     
                         <label className='label' htmlFor='desconocido' ><input type='radio' className='input' name='estado' value='unknown' id='desconocido'/>Desconocido</label>
                     </div>
                     <button id="unselect" onClick={() => unselect()}>Sin Filtros</button>
