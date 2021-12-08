@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import Modal from "./Modal";
 import '../../../styles/table.scss'
+import '../../../styles/modal.scss'
+import Modal from "./Modal";
 
 export default function Table (props) {
 
@@ -25,7 +26,7 @@ export default function Table (props) {
         </tr>
         {
             mostrar ? (
-            <Modal name={name} residents={residents} cerrar={cerrar}/>
+                <Modal residents={residents} cerrar={cerrar}/>
             ) : null
         }
         </>

@@ -1,38 +1,44 @@
 .div_modal{
     position: absolute;
+    top: 274px;
     z-index: 9;
-    overflow: auto;
-    background-color: white;
-    color: black;
-    width: 35%;
-    height: 35%;
-    padding: 2rem;
+    background-color: whitesmoke;
+    width: 75%;
+    height: 80%;
+    padding: 30px;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-around;
-    border-radius: 31px;
-    // box-shadow: rgb(0 0 0 / 16%) 0px 10px 36px 0px, rgb(0 0 0 / 6%) 0px 0px 0px 1px;
     justify-content: space-evenly;
-    .h2_modal{
-        text-align: center;
-        padding: 2rem;
-    }
     .div_buttons_modals{
         display: flex;
-            flex-direction: row;
-            width: 68%;
-            height: 26%;
-            .button_modal{
-                width: 100%;
+        flex-direction: row;
+        width: auto;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        .button_modal{
+            width: 100%;
             border: none;
-            background-color: black;
+            background-color: violet;
             color: white;
             border-radius: 25px;
             margin: 1rem;
+            padding: 1rem;
             &:hover{
                 cursor: pointer;
             }
         }
+    }
+    .div_container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100%;
+        margin-top: 25px;
+        margin-bottom: 25px;
     }
 }
