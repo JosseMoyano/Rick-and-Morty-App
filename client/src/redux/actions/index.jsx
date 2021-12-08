@@ -2,6 +2,7 @@ export const GET_CHARACTERS = 'GET CHARACTERS';
 export const GET_CHARACTER = 'GET CHARACTER';
 export const CLEAN_CHARACTER = 'CLEAN CHARACTER';
 export const SEARCH_CHARACTERS = 'SEARCH CHARACTERS';
+export const CLEAN_SEARCHED_CHARACTER = 'CLEAN SEARCHED CHARACTER';
 export const GET_LOCATIONS = 'GET LOCATIONS';
 export const GET_EPISODES = 'GET EPISODES';
 
@@ -38,6 +39,13 @@ export const getCharacter = (url) => {
 export const cleanCharacter = () => {
         return {
             type: CLEAN_CHARACTER,
+            
+        }
+}
+
+export const cleanSearchedCharacter = () => {
+        return {
+            type: CLEAN_SEARCHED_CHARACTER,
             
         }
 }

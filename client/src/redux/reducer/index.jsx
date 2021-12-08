@@ -1,4 +1,4 @@
-import { CLEAN_CHARACTER, GET_CHARACTER, GET_CHARACTERS, GET_EPISODES, GET_LOCATIONS, SEARCH_CHARACTERS } from '../actions';
+import { CLEAN_CHARACTER, CLEAN_SEARCHED_CHARACTER, GET_CHARACTER, GET_CHARACTERS, GET_EPISODES, GET_LOCATIONS, SEARCH_CHARACTERS } from '../actions';
 
 const initialState = {
    characters : undefined,
@@ -24,6 +24,11 @@ export default function reducer (state = initialState, action){
             return {
                 ...state,
                 character: [],
+            } 
+        case CLEAN_SEARCHED_CHARACTER:
+            return {
+                ...state,
+                searchedCharacter: [],
             } 
         case SEARCH_CHARACTERS:
             return {

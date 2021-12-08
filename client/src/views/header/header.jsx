@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom";
 import img from '../../assets/Rick and Morty.png'
-import { searchCharacter } from '../../redux/actions';
+import { cleanSearchedCharacter, searchCharacter } from '../../redux/actions';
 import '../../styles/header.scss';
 import Post from '../body/components/post';
 
@@ -16,8 +16,13 @@ export default function Header () {
     const onChange = (e) => {
         setSearch(e.target.value)
         if (search.length > 0){
-        dispatch(searchCharacter(search))}
+        return dispatch(searchCharacter(search))
+        }
     }
+
+    useEffect(() => {
+        if(search === '') dispatch(cleanSearchedCharacter())
+    }, [dispatch, search])
 
     return (
         <>
@@ -37,17 +42,14 @@ export default function Header () {
                     </div>
                 </div>
         </div>
+        <div className='slide'></div>
+        <div className='container_posts_header'>
         {
-            search ? (
-                <div className='container_posts'>
-                {
-                    searchedCharacter ? searchedCharacter.map(c => (
-                            <Post name={c.name} image={c.image} />
+                    search && searchedCharacter ? searchedCharacter.map(c => (
+                        <Post name={c.name} image={c.image} />
                     )) : null
-                }
-                </div>
-            ): null
         }
+        </div>
         </>
     )
 }

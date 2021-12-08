@@ -30,7 +30,7 @@ export default function Tables (props) {
                     locations ? (
                         locations?.slice(pagesVisited, pagesVisited + postsByPage).map(c => (
                             <>
-                            <Table name={c.name} type={c.type} dimension={c.dimension} residents={c.residents} />
+                            <Table name={c.name} type={c.type} dimension={c.dimension} residents={c.residents} id={c.id} />
                             </>
                         ))
                     ) : <p>cargando...</p>

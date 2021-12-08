@@ -26,7 +26,7 @@ export default function TableEpisode (props) {
         </tr>
         {
             mostrar ? (
-            <Modal name={name} residents={characters} cerrar={cerrar}/>
+            <Modal residents={characters} cerrar={cerrar}/>
             ) : null
         }
         </>

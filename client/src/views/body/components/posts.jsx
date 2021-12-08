@@ -18,15 +18,15 @@ export default function Posts (props) {
 
     return (
         <>
+                <div className='container_posts' /* key={c.id} */>
             {
                 characters ? (
                     characters?.slice(pagesVisited, pagesVisited + postsByPage).map(c => (
-                        <div className='container_posts' key={c.id}>
                             <Post name={c.name} image={c.image} />
-                        </div>
 
                 ))) : <p>cargando...</p>
             }
+            </div>
             <div className='paginado'>
                 <ReactPaginate
                 previousLabel={"<"}

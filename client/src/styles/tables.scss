@@ -2,6 +2,8 @@
     border-collapse: collapse;
     width: 100%;
     margin-bottom: 30px;
+    flex: 9;
+
     .tr{
         text-align: left;
         background-color: violet;
@@ -14,5 +16,5 @@
         .th_residents{
             text-align: center;
         }
-    }
+    } 
 }

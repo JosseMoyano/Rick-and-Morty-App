@@ -32,7 +32,7 @@ export default function TablesEpisodes (props) {
                         episodes?.slice(pagesVisited, pagesVisited + postsByPage).map(c => (
                             <TableEpisode name={c.name} air_date={c.air_date} episode={c.episode} characters={c.characters} />
                         ))
-                    ) : <p>cargando en tablesepisodio...</p>
+                    ) : <p>cargando...</p>
                 }
             </table>
             <div className='paginado'>

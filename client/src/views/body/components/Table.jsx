@@ -8,7 +8,6 @@ export default function Table (props) {
     const {name, type, dimension, residents} = props
     const [mostrar, setMostrar] = useState(false);
 
-
     const onClick = () => {
         setMostrar(!mostrar)
     }
