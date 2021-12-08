@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 import Episodios from './views/body/episodios';
 import Personajes from './views/body/personajes';
 import Ubicaciones from './views/body/ubicaciones';
-import Footer from './views/footer/footer';
+// import Footer from './views/footer/footer';
 import Header from './views/header/header';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       <Route exact path="/" component={Personajes} />
       <Route path="/ubicaciones" component={Ubicaciones}/>
       <Route path="/episodios" component={Episodios}/>
-    <Footer/>
+    {/* <Footer/> */}
     </>
   );
 }

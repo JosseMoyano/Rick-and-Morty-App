@@ -1,33 +1,41 @@
-import React, { useState } from 'react';
-import ReactPaginate from 'react-paginate';
+import React/* , { useState } */ from 'react';
+// import ReactPaginate from 'react-paginate';
 import CardIMG from './CardIMG';
-import s from "./post.module.css";
+// import s from "./post.module.css";
+import '../../../styles/modal.scss'
 
 export default function Modal (props) {
 
-    const { name, residents, cerrar } = props; 
+    let { name, residents, cerrar } = props; 
 
-    const [pageNumber, setPageNumber] = useState(0);
-    const postsByPage = 4;
-    const pagesVisited = pageNumber * postsByPage;
-    const pageCount = Math.ceil(residents?.length / postsByPage);
+    // let hash = {};
+    // residents = residents.filter(o => hash[o.id] ? false : hash[o.id] = true);
 
-    const changePage = ({ selected }) => {
-        setPageNumber(selected);
-    };
+    let set                 = new Set( residents.map( JSON.stringify ) )
+    let arrSinDuplicaciones = Array.from( set ).map( JSON.parse );
+
+    console.log('arrSinDuplicaciones:', arrSinDuplicaciones)
+    // const [pageNumber, setPageNumber] = useState(0);
+    // const postsByPage = 1;
+    // const pagesVisited = pageNumber * postsByPage;
+    // const pageCount = Math.ceil(residents?.length / postsByPage);
+
+    // const changePage = ({ selected }) => {
+    //     setPageNumber(selected);
+    // };
 
     return (
         <div className='div_modal'>
-            <h2 className='h2_modal'>Residentes de {name}!</h2>
+            {/* <h2 className='h2_modal'>Residentes de {name}!</h2> */}
             {
-                residents ? residents?.slice(pagesVisited, pagesVisited + postsByPage).map(r => (
+                arrSinDuplicaciones ? arrSinDuplicaciones?.map(r => (
                     <CardIMG resident={r} name={name} />
                 )) : <p>cargando...</p>
             }
             <div className='div_buttons_modals'>                            
                 <button value='ok' className='button_modal' onClick={() => cerrar()}>Cerrar</button>
             </div>  
-            <div className='paginado'>
+            {/* <div className='paginado'>
                 <ReactPaginate
                 previousLabel={"<"}
                 nextLabel={">"}
@@ -41,7 +49,7 @@ export default function Modal (props) {
                 pageRangeDisplayed={0}
                 marginPagesDisplayed={1}
                 />
-            </div>         
+            </div>          */}
         </div>
     )
 }

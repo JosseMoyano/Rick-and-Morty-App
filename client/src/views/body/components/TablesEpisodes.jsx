@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import s from "./post.module.css";
 import TableEpisode from './TableEpisode';
+import '../../../styles/tables.scss'
+
 
 export default function TablesEpisodes (props) {
 
@@ -18,12 +20,12 @@ export default function TablesEpisodes (props) {
 
     return (
         <>
-            <table>
-                <tr>
-                  <th>Nombre</th>
-                  <th>Fecha</th>
-                  <th>Episodio</th>
-                  <th>Personajes</th>
+            <table className='table'>
+                <tr className='tr'>
+                  <th className='th'>Nombre</th>
+                  <th className='th'>Fecha</th>
+                  <th className='th'>Episodio</th>
+                  <th className='th' style={{textAlign:'center'}}>Personajes</th>
                 </tr>
                 {
                     episodes?.length > 0 ? (

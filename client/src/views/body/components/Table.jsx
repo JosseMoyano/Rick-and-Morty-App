@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
+import '../../../styles/table.scss'
 
 export default function Table (props) {
 
@@ -17,10 +18,10 @@ export default function Table (props) {
     return (
         <>
         <tr>
-            <td>{name}</td>
-            <td>{type}</td>
-            <td>{dimension}</td>
-            <td><button onClick={onClick}> Mostrar </button></td>
+            <td className='td'>{name}</td>
+            <td className='td'>{type}</td>
+            <td className='td'>{dimension}</td>
+            <td className='td' ><button className='boton' onClick={onClick}> Mostrar </button></td>
         </tr>
         {
             mostrar ? (

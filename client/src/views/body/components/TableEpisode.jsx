@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
+import '../../../styles/table.scss'
+
 
 export default function TableEpisode (props) {
 
@@ -17,10 +19,10 @@ export default function TableEpisode (props) {
     return (
         <>
         <tr>
-            <td>{name}</td>
-            <td>{air_date}</td>
-            <td>{episode}</td>
-            <td><button onClick={onClick}> Mostrar </button></td>
+            <td className='td'>{name}</td>
+            <td className='td'>{air_date}</td>
+            <td className='td'>{episode}</td>
+            <td className='td'><button className='boton' onClick={onClick}> Mostrar </button></td>
         </tr>
         {
             mostrar ? (

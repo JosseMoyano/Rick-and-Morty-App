@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import s from "./post.module.css";
 import Table from './Table';
+import '../../../styles/tables.scss'
 
 export default function Tables (props) {
 
@@ -18,12 +19,12 @@ export default function Tables (props) {
 
     return (
         <>
-            <table>
-                <tr>
-                  <th>Nombre</th>
-                  <th>Tipo</th>
-                  <th>Dimension</th>
-                  <th>Residentes</th>
+            <table className='table'>
+                <tr className='tr'>
+                  <th className='th'>Nombre</th>
+                  <th className='th'>Tipo</th>
+                  <th className='th'>Dimension</th>
+                  <th className='th_residents' style={{textAlign:'center'}}>Residentes</th>
                 </tr>
                 {
                     locations ? (

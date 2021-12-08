@@ -18,7 +18,7 @@ export default function CardIMG (props){
     // let hash = {};
     // character = character.filter(o => hash[o.id] ? false : hash[o.id] = true);
 
-    console.log('character: ', character)
+    // console.log('character: ', character)
     
     return (
         <>
