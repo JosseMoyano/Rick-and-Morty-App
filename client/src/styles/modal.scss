@@ -2,7 +2,7 @@
     position: absolute;
     top: 634px;
     z-index: 9;
-    background-color: whitesmoke;
+    background-color: #e5e5e5;
     width: 75%;
     height: 85%;
     padding: 30px;
@@ -21,13 +21,17 @@
         .button_modal{
             width: 100%;
             border: none;
-            background-color: violet;
+            background-color: red;
+
             color: white;
             border-radius: 25px;
+            font-weight: 600;
             margin: 1rem;
             padding: 1rem;
             &:hover{
                 cursor: pointer;
+                background-color: red;
+
             }
         }
     }

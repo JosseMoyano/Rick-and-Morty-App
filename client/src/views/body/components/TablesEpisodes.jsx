@@ -48,7 +48,7 @@ export default function TablesEpisodes (props) {
                 activeClassName={s.paginationActive}
                 pageRangeDisplayed={0}
                 marginPagesDisplayed={1}
-            />
+            /> 
             </div>
         </>
     )
