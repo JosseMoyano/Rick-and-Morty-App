@@ -1,6 +1,8 @@
-import SidebarEpisodios from "./components/SidebarEpisodios";
+import React from "react";
+import SidebarEpisodios from "./componentes/SidebarEpisodios";
+import '../../../styles/personajes.scss'
 
-export default function Ubicaciones () {
+export default function Episodios () {
     
     return (
         <div className='container_body'>

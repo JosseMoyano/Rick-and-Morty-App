@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import img from '../../assets/Rick and Morty.png'
 import { cleanSearchedCharacter, searchCharacter } from '../../redux/actions';
 import '../../styles/header.scss';
-import Post from '../body/components/post';
+import Post from '../body/components/Post';
 
 export default function Header () {
 

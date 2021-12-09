@@ -1,6 +1,6 @@
 import React from "react"; 
-import '../../styles/body.scss';
-import SidebarUbicaciones from "./components/sidebarUbicaciones";
+import '../../../styles/personajes.scss';
+import SidebarUbicaciones from "./componentes/SidebarUbicaciones";
 
 export default function Ubicaciones () {
     

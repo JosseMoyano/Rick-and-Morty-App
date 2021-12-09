@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import '../../../styles/sidebar.scss'
-import { getLocations } from "../../../redux/actions";
+import '../../../../styles/sidebar.scss'
+import { getLocations } from "../../../../redux/actions";
 import Tables from "./Tables";
 
 export default function SidebarUbicaciones () {

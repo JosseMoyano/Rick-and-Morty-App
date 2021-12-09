@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import '../../../styles/sidebar.scss'
-import { getEpisodes } from "../../../redux/actions";
+import { getEpisodes } from "../../../../redux/actions";
+import '../../../../styles/sidebar.scss'
 import TablesEpisodes from "./TablesEpisodes";
 
 export default function SidebarEpisodios () {

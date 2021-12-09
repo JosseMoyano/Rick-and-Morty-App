@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import ReactPaginate from 'react-paginate';
-import s from "./post.module.css";
+import s from "../../components/post.module.css";
 import Table from './Table';
-import '../../../styles/tables.scss'
+import '../../../../styles/tables.scss'
 
 export default function Tables (props) {
 
@@ -27,11 +27,11 @@ export default function Tables (props) {
                   <th className='th_residents' style={{textAlign:'center'}}>Residentes</th>
                 </tr>
                 {
-                    locations ? (
+                    locations === 'No hay coincidencias' ? (
+                        <p>No hay coincidencias</p>
+                    ) : locations ? (
                         locations?.slice(pagesVisited, pagesVisited + postsByPage).map(c => (
-                            <>
                             <Table name={c.name} type={c.type} dimension={c.dimension} residents={c.residents} id={c.id} />
-                            </>
                         ))
                     ) : <p>cargando...</p>
                 }

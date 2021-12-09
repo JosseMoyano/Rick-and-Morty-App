@@ -51,10 +51,12 @@
                     color: white;
                 }
                 &:hover{
-                    background-color: #1DB779 ;
+                    background-color: #fca311 ;
+                    border: none;
+
                 }
                 &:checked{
-                    background-color: #1DB779;
+                    background-color: #fca311;
                     border: none;
                 }
             }
@@ -69,7 +71,7 @@
                 margin-bottom: 15px;
                 display: flex; 
                 &:hover{
-                    color: #1DB779;
+                    color: #fca311;
                     font-family: "Open Sans";
                     font-size: 15px;
                     font-weight: 300;
@@ -81,6 +83,19 @@
                 width: 100%;
                 padding: 5px;
                 outline: none;
+            }
+        }
+        .button{
+            border: none;
+            background-color: #e5e5e5;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 4.8px;
+            color: black;
+            width: 100%;
+            &:hover{
+                background-color: #fca311;
+                color: white;
             }
         }
     }

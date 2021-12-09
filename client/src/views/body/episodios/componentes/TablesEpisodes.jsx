@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import ReactPaginate from 'react-paginate';
-import s from "./post.module.css";
+import s from "../../components/post.module.css";
 import TableEpisode from './TableEpisode';
-import '../../../styles/tables.scss'
+import '../../../../styles/tables.scss'
 
 
 export default function TablesEpisodes (props) {
@@ -28,7 +28,9 @@ export default function TablesEpisodes (props) {
                   <th className='th' style={{textAlign:'center'}}>Personajes</th>
                 </tr>
                 {
-                    episodes?.length > 0 ? (
+                    episodes === 'No hay coincidencias' ? (
+                        <p>No hay coincidencias</p>
+                    ) : episodes?.length > 0 ? (
                         episodes?.slice(pagesVisited, pagesVisited + postsByPage).map(c => (
                             <TableEpisode name={c.name} air_date={c.air_date} episode={c.episode} characters={c.characters} />
                         ))

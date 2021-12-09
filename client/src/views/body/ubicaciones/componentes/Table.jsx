@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import '../../../styles/table.scss'
-import '../../../styles/modal.scss'
-import Modal from "./Modal";
+import '../../../../styles/table.scss'
+import Modal from "../../components/Modal";
 
 export default function Table (props) {
 

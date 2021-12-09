@@ -17,4 +17,9 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-
+/*
+Faltaria colocar alguna imagen mientras carga los resultados 
+Faltaria ver archivo por archivo para corregir errores
+Faltaria ver los warnings 
+Faltaria ver si se puede reutilizar los componentes de Episodios con ubicaciones y personajes
+*/

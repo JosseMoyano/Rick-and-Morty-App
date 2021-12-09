@@ -1,6 +1,6 @@
 import React from "react";
-import Sidebar from "./components/sidebar";
-import '../../styles/body.scss'
+import Sidebar from "./componentes/Sidebar";
+import '../../../styles/personajes.scss'
 
 export default function Personajes () {
     

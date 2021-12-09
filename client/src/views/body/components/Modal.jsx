@@ -5,7 +5,7 @@ import s from "./post.module.css";
 import '../../../styles/modal.scss'
 import { useDispatch, useSelector } from 'react-redux';
 import { cleanCharacter, getCharacter } from '../../../redux/actions';
-import Post from './post';
+import Post from './Post';
 
 export default function Modal (props) {
 
@@ -40,9 +40,9 @@ export default function Modal (props) {
             </div> 
             <div className='div_container'>
                 {
-                    character ? character?.slice(pagesVisited, pagesVisited + postsByPage).map(c => (
+                    character && character.length > 0 ? character?.slice(pagesVisited, pagesVisited + postsByPage).map(c => (
                         <Post name={c.name} image={c.image} />
-                    )) : <p>cargando...</p>
+                    )) :  <p>No existen personajes...</p>
                 }
             </div>
              

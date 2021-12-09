@@ -28,7 +28,8 @@ router.get('/', async (req, res, next) => {
                         },
                     },
                 })
-                return res.json(episodio)
+                if(episodio.length > 0) return res.json(episodio)
+                return res.json('No hay coincidencias') 
             } else if (episode === '') {
                 let episodio = await Episode.findAll({
                     where: {
@@ -41,12 +42,14 @@ router.get('/', async (req, res, next) => {
                         },
                     },
                 })
-                return res.json(episodio)
+                if(episodio.length > 0) return res.json(episodio)
+                return res.json('No hay coincidencias') 
             } else {
                 let episodio = await Episode.findAll({
                     // attributes: ['id', 'name', 'type', 'dimension', 'residents', 'url']
                 })
-                return res.json(episodio) 
+                if(episodio.length > 0) return res.json(episodio)
+                return res.json('No hay coincidencias') 
             }
         } else {
             if (episode !== ''){
@@ -61,13 +64,15 @@ router.get('/', async (req, res, next) => {
                         }
                     }
                 })
-                return res.json(episodio)
+                if(episodio.length > 0) return res.json(episodio)
+                return res.json('No hay coincidencias') 
             } else {
                 let episodio = await Episode.findAll({
                     // attributes: ['id', 'name', 'type', 'dimension', 'residents', 'url']
                     // attributes: ['id', 'name', 'status', 'gender', 'locationName', 'locationUrl', 'image', 'url']
                 })
-                return res.json(episodio)
+                if(episodio.length > 0) return res.json(episodio)
+                return res.json('No hay coincidencias') 
             }
         }
     } catch (error) {

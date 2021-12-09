@@ -28,7 +28,8 @@ router.get('/', async (req, res, next) => {
                         },
                     },
                 })
-                return res.json(ubicacion)
+                if(ubicacion.length > 0) return res.json(ubicacion)
+                return res.json('No hay coincidencias')
             } else if (type === '') {
                 let ubicacion = await Location.findAll({
                     where: {
@@ -41,12 +42,14 @@ router.get('/', async (req, res, next) => {
                         },
                     },
                 })
-                return res.json(ubicacion)
+                if(ubicacion.length > 0) return res.json(ubicacion)
+                return res.json('No hay coincidencias')
             } else {
                 let ubicacion = await Location.findAll({
                     attributes: ['id', 'name', 'type', 'dimension', 'residents', 'url']
                 })
-                return res.json(ubicacion) 
+                if(ubicacion.length > 0) return res.json(ubicacion)
+                return res.json('No hay coincidencias') 
             }
         } else {
             if (type !== ''){
@@ -61,13 +64,15 @@ router.get('/', async (req, res, next) => {
                         }
                     }
                 })
-                return res.json(ubicacion)
+                if(ubicacion.length > 0) return res.json(ubicacion)
+                return res.json('No hay coincidencias')
             } else {
                 let ubicacion = await Location.findAll({
                     attributes: ['id', 'name', 'type', 'dimension', 'residents', 'url']
                     // attributes: ['id', 'name', 'status', 'gender', 'locationName', 'locationUrl', 'image', 'url']
                 })
-                return res.json(ubicacion)
+                if(ubicacion.length > 0) return res.json(ubicacion)
+                return res.json('No hay coincidencias')
             }
         }
     } catch (error) {

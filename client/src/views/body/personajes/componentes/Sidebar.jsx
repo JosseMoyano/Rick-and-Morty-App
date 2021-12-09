@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Posts from "./posts";
+import Posts from "./Posts";
 import { useDispatch, useSelector } from 'react-redux';
-import '../../../styles/sidebar.scss'
-import { getCharacters } from "../../../redux/actions";
+import '../../../../styles/sidebar.scss'
+import { getCharacters } from "../../../../redux/actions";
 
 export default function Sidebar () {
 
@@ -47,7 +47,7 @@ export default function Sidebar () {
                         <label className='label' htmlFor='muerto'><input type='radio' className='input' name='estado' value='dead' id='muerto' />Muerto</label>     
                         <label className='label' htmlFor='desconocido' ><input type='radio' className='input' name='estado' value='unknown' id='desconocido'/>Desconocido</label>
                     </div>
-                    <button id="unselect" onClick={() => unselect()}>Sin Filtros</button>
+                    <button id="unselect" className='button' onClick={() => unselect()}>Sin Filtros</button>
                 </div>
                 <div className='container_title'>
                     <p className='title'>Genero</p>
@@ -56,7 +56,7 @@ export default function Sidebar () {
                         <label className='label' htmlFor='masculino'><input type='radio' className='input' name='genero' value='male' id='masculino' />Masculino</label>
                         <label className='label' htmlFor='femenido'><input type='radio' className='input' name='genero' value='female' id='femenido'/>Femenido</label>
                     </div>
-                    <button id="unselect" onClick={() => unselectGenero()}>Sin Filtros</button>
+                    <button id="unselect" className='button' onClick={() => unselectGenero()}>Sin Filtros</button>
                 </div>
                 <div className='container_title'>
                     <p className='title'>Nombre</p>

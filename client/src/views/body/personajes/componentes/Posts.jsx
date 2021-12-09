@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Post from "./post";
 import ReactPaginate from "react-paginate";
-import s from "./post.module.css";
-import '../../../styles/posts.scss'
+import s from "../../components/post.module.css";
+import '../../../../styles/posts.scss'
+import Post from "../../components/Post";
 
 export default function Posts (props) {
 

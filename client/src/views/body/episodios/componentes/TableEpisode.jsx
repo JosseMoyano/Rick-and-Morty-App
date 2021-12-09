@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Modal from "./Modal";
-import '../../../styles/table.scss'
+import Modal from "../../components/Modal";
+import '../../../../styles/table.scss'
 
 
 export default function TableEpisode (props) {
