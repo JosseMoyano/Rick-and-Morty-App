@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import ReactPaginate from 'react-paginate';
+import Table from './Table';
 import s from "./post.module.css";
 import '../../../styles/tables.scss';
-import Table0 from './Table';
 
 export default function Tables0 (props) {
 
@@ -32,7 +32,7 @@ export default function Tables0 (props) {
                     ) : page === 'episodes' ?(
                     state?.length > 0 ? (
                         state?.slice(pagesVisited, pagesVisited + postsByPage).map(c => (
-                            <Table0 
+                            <Table 
                             name={c.name} 
                             airDate_type={c.air_date} episode_dimension={c.episode} 
                             characters_residents={c.characters} 
@@ -41,7 +41,7 @@ export default function Tables0 (props) {
                     ) : <p>cargando...</p>
                     ) :  state?.length > 0 ? (
                         state?.slice(pagesVisited, pagesVisited + postsByPage).map(c => (
-                            <Table0 
+                            <Table 
                             name={c.name} 
                             airDate_type={c.type} 
                             episode_dimension={c.dimension} 

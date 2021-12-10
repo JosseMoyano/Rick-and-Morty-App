@@ -1,10 +1,10 @@
 import React , { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
-import s from "./post.module.css";
-import '../../../styles/modal.scss'
 import { useDispatch, useSelector } from 'react-redux';
 import { cleanCharacter, getCharacter } from '../../../redux/actions';
 import Post from './Post';
+import s from "./post.module.css";
+import '../../../styles/modal.scss'
 
 export default function Modal (props) {
 

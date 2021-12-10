@@ -46,7 +46,6 @@ router.get('/', async (req, res, next) => {
                 return res.json('No hay coincidencias')
             } else {
                 let ubicacion = await Location.findAll({
-                    attributes: ['id', 'name', 'type', 'dimension', 'residents', 'url']
                 })
                 if(ubicacion.length > 0) return res.json(ubicacion)
                 return res.json('No hay coincidencias') 
@@ -68,8 +67,6 @@ router.get('/', async (req, res, next) => {
                 return res.json('No hay coincidencias')
             } else {
                 let ubicacion = await Location.findAll({
-                    attributes: ['id', 'name', 'type', 'dimension', 'residents', 'url']
-                    // attributes: ['id', 'name', 'status', 'gender', 'locationName', 'locationUrl', 'image', 'url']
                 })
                 if(ubicacion.length > 0) return res.json(ubicacion)
                 return res.json('No hay coincidencias')
@@ -79,31 +76,5 @@ router.get('/', async (req, res, next) => {
         next(error)
     }
 });
-
-router.get('/search', async (req, res, next) => {
-    try {
-        let { name } = req.query; 
-        if (name !== ''){
-            nameMayus = name.replace(/\b\w/g, l => l.toUpperCase()); 
-            let ubicacion = await Location.findAll({
-                where: {
-                    name: { 
-                        [Op.or]: {
-                            [Op.startsWith]: nameMayus,
-                            [Op.endsWith]: name,
-                            [Op.substring]: name
-                        }
-                    }
-                },
-                limit: 4
-            })
-            if(ubicacion.length > 0) return res.json(ubicacion)
-            return res.json('No hay coincidencias') 
-        }
-    } catch (error) {
-        console.log(error)
-    }
-});
-
 
 module.exports = router;

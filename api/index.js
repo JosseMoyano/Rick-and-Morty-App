@@ -3,7 +3,6 @@ const { conn } = require('./src/db');
 const axios = require('axios');
 const { guardarCharacters, guardarLocations, guardarEpisodes } = require('./src/utils');
 
-// Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
   console.log('Conectado a la Base de Datos')
   server.listen(3001, async () => {

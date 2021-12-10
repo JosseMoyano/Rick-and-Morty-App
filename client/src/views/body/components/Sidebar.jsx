@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import '../../../styles/sidebar.scss'
 import { getEpisodes, getLocations } from "../../../redux/actions";
-import Tables0 from "./Tables";
+import Tables from "./Tables";
+import '../../../styles/sidebar.scss'
 
-export default function Sidebar0 (props) {
+export default function Sidebar (props) {
 
     const { page, filtro } = props;
 
@@ -45,7 +45,7 @@ export default function Sidebar0 (props) {
                     </div>
             </div>
             <div className='container_posts'>
-                <Tables0 state={state} page={page}/>
+                <Tables state={state} page={page}/>
             </div>
         </>
     )

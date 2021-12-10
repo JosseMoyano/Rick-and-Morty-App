@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Modal from "./Modal";
 import '../../../styles/table.scss'
 
-export default function Table0 (props) {
+export default function Table (props) {
 
     const {name, airDate_type, episode_dimension, characters_residents} = props
     const [mostrar, setMostrar] = useState(false);
