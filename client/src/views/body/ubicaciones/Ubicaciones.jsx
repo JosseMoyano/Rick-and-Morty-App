@@ -1,6 +1,6 @@
 import React from "react"; 
 import '../../../styles/personajes.scss';
-import SidebarUbicaciones from "./componentes/SidebarUbicaciones";
+import Sidebar0 from "../components/Sidebar";
 
 export default function Ubicaciones () {
     
@@ -12,7 +12,7 @@ export default function Ubicaciones () {
                 <hr align="right" width="100%" className='hr_right'></hr>
             </div>
              <div className='sidebar'>
-                <SidebarUbicaciones/>
+                <Sidebar0  page={'locations'} filtro={'Tipo'}/>
             </div> 
         </div>
     )

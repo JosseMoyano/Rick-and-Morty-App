@@ -1,28 +1,31 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { getEpisodes } from "../../../../redux/actions";
-import '../../../../styles/sidebar.scss'
-import TablesEpisodes from "./TablesEpisodes";
+import '../../../styles/sidebar.scss'
+import { getEpisodes, getLocations } from "../../../redux/actions";
+import Tables0 from "./Tables";
 
-export default function SidebarEpisodios () {
+export default function Sidebar0 (props) {
+
+    const { page, filtro } = props;
 
     const dispatch = useDispatch()
-    const episodes = useSelector(state => state.episodes)
+    const state = useSelector(state => state[page])
 
     const [ filters, setFilters ]=useState({
         name: '',
-        episode:'',
+        adicional:'',
     })
-    
+
     const onChange = (e) => {
         if (e.target.name === 'name') setFilters({...filters, name: e.target.value})
-        if (e.target.name === 'episode') setFilters({...filters, episode: e.target.value})
+        if (e.target.name === 'adicional') setFilters({...filters, adicional: e.target.value})
     }
 
     useEffect(() => {    
-        dispatch(getEpisodes(filters.name, filters.episode))
-    }, [dispatch, filters.name, filters.episode])
-
+        if(page === 'episodes') dispatch(getEpisodes(filters.name, filters.adicional))
+        if(page === 'locations') dispatch(getLocations(filters.name, filters.adicional))
+    }, [dispatch, filters.name, filters.adicional, page])
+    
     return (
         <>
             <div className='container_sidebar'>
@@ -34,15 +37,15 @@ export default function SidebarEpisodios () {
                         </div>
                     </div>
                     <div className='container_title'>
-                        <p className='title'>Episode</p>
+                        <p className='title'>{filtro}</p>
                         <hr className='hr'/>
                         <div className='container_input' onChange={(e) => onChange(e)}>
-                            <input type='search' name='episode' id='tipo' value={filters.episode} placeholder='Nombre...' className='input_search'/>
+                            <input type='search' name='adicional' id='tipo' value={filters.adicional} placeholder='Nombre...' className='input_search'/>
                         </div>
                     </div>
             </div>
             <div className='container_posts'>
-                <TablesEpisodes episodes={episodes}/>
+                <Tables0 state={state} page={page}/>
             </div>
         </>
     )

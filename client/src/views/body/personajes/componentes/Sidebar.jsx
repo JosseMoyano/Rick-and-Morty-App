@@ -16,8 +16,8 @@ export default function Sidebar () {
     })
     
     const onChange = (e) => {
-        if (e.target.name === 'estado') setFilters({...filters, status: e.target.value})
-        if (e.target.name === 'genero') setFilters({...filters, gender: e.target.value})
+        if (e.target.name === 'estado') setFilters({...filters, status: e.target.defaultValue})
+        if (e.target.name === 'genero') setFilters({...filters, gender: e.target.defaultValue})
         if (e.target.name === 'nombre') setFilters({...filters, name: e.target.value})
     }
 
@@ -33,7 +33,6 @@ export default function Sidebar () {
     function unselectGenero() {
         document.querySelectorAll('[name=genero]').forEach((x) => x.checked = false);
         setFilters({...filters, gender: 'any'})
-
     }
 
     return (
@@ -43,9 +42,9 @@ export default function Sidebar () {
                     <p className='title'>Estado</p>
                     <hr className='hr'/>
                     <div className='container_input' onChange={ (e) => onChange(e)}>
-                        <label className='label' htmlFor='vivo'><input type='radio' className='input' name='estado' value='alive' id='vivo'/>Vivo</label>
-                        <label className='label' htmlFor='muerto'><input type='radio' className='input' name='estado' value='dead' id='muerto' />Muerto</label>     
-                        <label className='label' htmlFor='desconocido' ><input type='radio' className='input' name='estado' value='unknown' id='desconocido'/>Desconocido</label>
+                        <label className='label' htmlFor='vivo'><input type='radio' className='input' name='estado' defaultValue='alive' id='vivo'/>Vivo</label>
+                        <label className='label' htmlFor='muerto'><input type='radio' className='input' name='estado' defaultValue='dead' id='muerto' />Muerto</label>     
+                        <label className='label' htmlFor='desconocido' ><input type='radio' className='input' name='estado' defaultValue='unknown' id='desconocido'/>Desconocido</label>
                     </div>
                     <button id="unselect" className='button' onClick={() => unselect()}>Sin Filtros</button>
                 </div>
@@ -53,8 +52,8 @@ export default function Sidebar () {
                     <p className='title'>Genero</p>
                     <hr className='hr'/>
                     <div className='container_input' onChange={(e) => onChange(e)}>
-                        <label className='label' htmlFor='masculino'><input type='radio' className='input' name='genero' value='male' id='masculino' />Masculino</label>
-                        <label className='label' htmlFor='femenido'><input type='radio' className='input' name='genero' value='female' id='femenido'/>Femenido</label>
+                        <label className='label' htmlFor='masculino'><input type='radio' className='input' name='genero' defaultValue='male' id='masculino' />Masculino</label>
+                        <label className='label' htmlFor='femenido'><input type='radio' className='input' name='genero' defaultValue='female' id='femenido'/>Femenino</label>
                     </div>
                     <button id="unselect" className='button' onClick={() => unselectGenero()}>Sin Filtros</button>
                 </div>

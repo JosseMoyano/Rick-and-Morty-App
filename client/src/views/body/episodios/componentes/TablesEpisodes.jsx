@@ -4,7 +4,6 @@ import s from "../../components/post.module.css";
 import TableEpisode from './TableEpisode';
 import '../../../../styles/tables.scss'
 
-
 export default function TablesEpisodes (props) {
 
     const { episodes } = props;
@@ -32,7 +31,7 @@ export default function TablesEpisodes (props) {
                         <p>No hay coincidencias</p>
                     ) : episodes?.length > 0 ? (
                         episodes?.slice(pagesVisited, pagesVisited + postsByPage).map(c => (
-                            <TableEpisode name={c.name} air_date={c.air_date} episode={c.episode} characters={c.characters} />
+                            <TableEpisode name={c.name} air_date={c.air_date} episode={c.episode} characters={c.characters} key={c.id} />
                         ))
                     ) : <p>cargando...</p>
                 }
@@ -49,8 +48,7 @@ export default function TablesEpisodes (props) {
                 disabledClassName={s.paginationDisabled}
                 activeClassName={s.paginationActive}
                 pageRangeDisplayed={0}
-                marginPagesDisplayed={1}
-            /> 
+                marginPagesDisplayed={1} /> 
             </div>
         </>
     )

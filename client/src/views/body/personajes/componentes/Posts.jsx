@@ -18,11 +18,11 @@ export default function Posts (props) {
 
     return (
         <>
-                <div className='container_posts' /* key={c.id} */>
+            <div className='container_posts' /* key={c.id} */>
             {
                 characters ? (
                     characters?.slice(pagesVisited, pagesVisited + postsByPage).map(c => (
-                            <Post name={c.name} image={c.image} />
+                            <Post name={c.name} image={c.image} key={c.id} />
 
                 ))) : <p>cargando...</p>
             }

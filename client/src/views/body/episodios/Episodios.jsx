@@ -1,6 +1,6 @@
 import React from "react";
-import SidebarEpisodios from "./componentes/SidebarEpisodios";
 import '../../../styles/personajes.scss'
+import Sidebar0 from "../components/Sidebar";
 
 export default function Episodios () {
     
@@ -12,7 +12,7 @@ export default function Episodios () {
                 <hr align="right" width="100%" className='hr_right'></hr>
             </div>
              <div className='sidebar'>
-                <SidebarEpisodios/>
+                <Sidebar0 page={'episodes'} filtro={'Episodio'}/>
             </div> 
         </div>
     )

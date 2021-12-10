@@ -15,6 +15,5 @@ export default function Personajes () {
                 <Sidebar/>
             </div>
         </div>
-       
     )
 }

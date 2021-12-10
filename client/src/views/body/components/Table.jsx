@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Modal from "../../components/Modal";
-import '../../../../styles/table.scss'
+import Modal from "./Modal";
+import '../../../styles/table.scss'
 
-export default function TableEpisode (props) {
+export default function Table0 (props) {
 
-    const {name, air_date, episode, characters} = props
+    const {name, airDate_type, episode_dimension, characters_residents} = props
     const [mostrar, setMostrar] = useState(false);
 
     const onClick = () => {
@@ -18,13 +18,13 @@ export default function TableEpisode (props) {
         <>
             <tr>
                 <td className='td'>{name}</td>
-                <td className='td'>{air_date}</td>
-                <td className='td'>{episode}</td>
+                <td className='td'>{airDate_type}</td>
+                <td className='td'>{episode_dimension}</td>
                 <td className='td'><button className='boton' onClick={onClick}> Mostrar </button></td>
             </tr>
             {
                 mostrar ? (
-                <Modal residents={characters} cerrar={cerrar}/>
+                <Modal characters_residents={characters_residents} cerrar={cerrar}/>
                 ) : null
             }
         </>

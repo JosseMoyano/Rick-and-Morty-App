@@ -1,6 +1,5 @@
 import React , { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
-// import CardIMG from './CardIMG';
 import s from "./post.module.css";
 import '../../../styles/modal.scss'
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,19 +8,19 @@ import Post from './Post';
 
 export default function Modal (props) {
 
-    let { residents, cerrar } = props; 
+    let { characters_residents, cerrar } = props; 
 
     const dispatch = useDispatch();
     const character = useSelector(state => state.character)
 
     useEffect(() => {
-        residents.forEach(r => (
+        characters_residents.forEach(r => (
             dispatch(getCharacter(r))
         ))
         return () => {
             dispatch(cleanCharacter())
         }
-    }, [dispatch, residents])
+    }, [dispatch, characters_residents])
 
     const [pageNumber, setPageNumber] = useState(0);
     const postsByPage = 3;
@@ -32,7 +31,6 @@ export default function Modal (props) {
         setPageNumber(selected);
     };
 
-
     return (
         <div className='div_modal'>
             <div className='div_buttons_modals'>                            
@@ -41,11 +39,10 @@ export default function Modal (props) {
             <div className='div_container'>
                 {
                     character && character.length > 0 ? character?.slice(pagesVisited, pagesVisited + postsByPage).map(c => (
-                        <Post name={c.name} image={c.image} />
+                        <Post name={c.name} image={c.image} key={c.id} />
                     )) :  <p>No existen personajes...</p>
                 }
             </div>
-             
             <div className='paginado'>
                 <ReactPaginate
                 previousLabel={"<"}

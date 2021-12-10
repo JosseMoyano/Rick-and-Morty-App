@@ -18,8 +18,8 @@ export default function reducer (state = initialState, action){
         case GET_CHARACTER:
             return {
                 ...state,
-                character: !state.character.includes(action.payload) ? [...state.character, action.payload] : null,
-            } 
+                character: [...state.character, action.payload]
+            }
         case CLEAN_CHARACTER:
             return {
                 ...state,

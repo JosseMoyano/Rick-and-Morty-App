@@ -65,10 +65,10 @@ export const searchCharacter = (name) => {
         }
 }
 
-export const getLocations = (type, name) => {
+export const getLocations = (name, adicional) => {
     return async dispatch => {
         try {
-            const response = await fetch(`http://localhost:3001/location?type=${type}&name=${name}`);
+            const response = await fetch(`http://localhost:3001/location?name=${name}&type=${adicional}`);
             const json = await response.json();
             dispatch({
                 type: GET_LOCATIONS,
@@ -80,10 +80,10 @@ export const getLocations = (type, name) => {
     }
 }
 
-export const getEpisodes = (name, episode) => {
+export const getEpisodes = (name, adicional) => {
     return async dispatch => {
         try {
-            const response = await fetch(`http://localhost:3001/episode?name=${name}&episode=${episode}`);
+            const response = await fetch(`http://localhost:3001/episode?name=${name}&episode=${adicional}`);
             const json = await response.json();
             dispatch({
                 type: GET_EPISODES,
